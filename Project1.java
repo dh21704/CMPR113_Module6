@@ -16,6 +16,7 @@ class TestScores
     
     double getAverage()
     {
+        int counter = 0;
         try
         {
             for (int i = 0; i < length; i++)
@@ -23,16 +24,16 @@ class TestScores
                 if (pri[i] > 100 || pri[i] < 0)
                 {
                     //average += pri[i]; 
-
-                    throw new IllegalArgumentException("\nNumber " + pri[i] + " is greater than 100 or less than 0");
-
+                    counter++;
+                    throw new IllegalArgumentException("\nNumber " + pri[i] + " is greater than 100 or less than 0\nIt will not be added to the array");
+                    
                 }
             
              average += pri[i];
              System.out.println("\nNumber: " + pri[i] + " was added");
+                System.out.println("\nAverage is now: " + average);
             }
         
-            average = average / length;
         
             
         } 
@@ -42,8 +43,10 @@ class TestScores
 
         }
         
+        length = length - counter;
         
-        return average;
+        System.out.println("\n\n" + average + " / " + length + " = " + average / length);
+        return average / length;
 
     }
     
