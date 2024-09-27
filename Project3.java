@@ -3,7 +3,7 @@ package com.mycompany.cmpr113_hw6;
 
 import java.util.Scanner;
 
-class ClassException  extends Exception
+class ClassException extends Exception
 {
     public ClassException(String message)
     {
